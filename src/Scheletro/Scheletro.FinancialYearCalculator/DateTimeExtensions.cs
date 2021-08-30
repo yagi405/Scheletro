@@ -11,7 +11,7 @@ namespace Scheletro.FinancialYearCalculator
         /// <summary>
         /// 会計年度初めの月です。
         /// </summary>
-        public const int FirstMonthOfFiscalYear = 4;
+        public const int FirstMonthOfFinancialYear = 4;
 
         private static readonly CultureInfo _cultureInfoEnUs = new("en-us");
 
@@ -20,9 +20,9 @@ namespace Scheletro.FinancialYearCalculator
         /// </summary>
         /// <param name="self">日付</param>
         /// <returns>日付の会計年度</returns>
-        public static int FiscalYear(this DateTime self)
+        public static int FinancialYear(this DateTime self)
         {
-            return self.Month < FirstMonthOfFiscalYear ? self.Year - 1 : self.Year;
+            return self.Month < FirstMonthOfFinancialYear ? self.Year - 1 : self.Year;
         }
 
         /// <summary>
@@ -30,9 +30,9 @@ namespace Scheletro.FinancialYearCalculator
         /// </summary>
         /// <param name="self">日付</param>
         /// <returns>日付の会計年度の初日</returns>
-        public static DateTime FirstDateOfFiscalYear(this DateTime self)
+        public static DateTime FirstDateOfFinancialYear(this DateTime self)
         {
-            return new DateTime(self.FiscalYear(), FirstMonthOfFiscalYear, 1);
+            return new DateTime(self.FinancialYear(), FirstMonthOfFinancialYear, 1);
         }
 
         /// <summary>
@@ -40,9 +40,9 @@ namespace Scheletro.FinancialYearCalculator
         /// </summary>
         /// <param name="self">日付</param>
         /// <returns>日付の会計年度の最終日</returns>
-        public static DateTime LastDateOfFiscalYear(this DateTime self)
+        public static DateTime LastDateOfFinancialYear(this DateTime self)
         {
-            return new DateTime(self.FiscalYear() + 1, FirstMonthOfFiscalYear, 1).AddSeconds(-1);
+            return new DateTime(self.FinancialYear() + 1, FirstMonthOfFinancialYear, 1).AddSeconds(-1);
         }
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Scheletro.FinancialYearCalculator
         /// <returns>日付の四半期</returns>
         public static int QuarterNumber(this DateTime self)
         {
-            return (self.AddMonths(1 - FirstMonthOfFiscalYear).Month + 2) / 3;
+            return (self.AddMonths(1 - FirstMonthOfFinancialYear).Month + 2) / 3;
         }
 
         /// <summary>
@@ -62,7 +62,7 @@ namespace Scheletro.FinancialYearCalculator
         /// <returns>日付の四半期の初日</returns>
         public static DateTime FirstDateOfQuarter(this DateTime self)
         {
-            var month = (self.QuarterNumber() - 1) * 3 + FirstMonthOfFiscalYear;
+            var month = (self.QuarterNumber() - 1) * 3 + FirstMonthOfFinancialYear;
             month = month > 12 ? month - 12 : month;
 
             var year = self.Month < month ? self.Year - 1 : self.Year;

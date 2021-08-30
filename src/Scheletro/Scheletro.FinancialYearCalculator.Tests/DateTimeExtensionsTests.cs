@@ -14,14 +14,14 @@ namespace Scheletro.FinancialYearCalculator.Tests
         /// 日付の会計年度が取得できることをテストします。
         /// </summary>
         [Fact]
-        public void FiscalYear_ShouldReturnFiscalYear()
+        public void FinancialYear_ShouldReturnFinancialYear()
         {
             var startDate = DateTime.Today.AddDays(-10000);
             foreach (var date in Enumerable.Range(0, 20000).Select(x => startDate.AddDays(x)))
             {
-                var fiscalYear = date.FiscalYear();
-                Assert.Equal(date.Month < DateTimeExtensions.FirstMonthOfFiscalYear ? date.Year - 1 : date.Year,
-                    fiscalYear);
+                var financialYear = date.FinancialYear();
+                Assert.Equal(date.Month < DateTimeExtensions.FirstMonthOfFinancialYear ? date.Year - 1 : date.Year,
+                    financialYear);
             }
         }
 
@@ -29,17 +29,17 @@ namespace Scheletro.FinancialYearCalculator.Tests
         /// 日付の会計年度の初日が取得できることをテストします。
         /// </summary>
         [Fact]
-        public void FirstDateOfFiscalYear_ShouldReturnFirstDateOfFiscalYear()
+        public void FirstDateOfFinancialYear_ShouldReturnFirstDateOfFinancialYear()
         {
             var startDate = DateTime.Today.AddDays(-10000);
             foreach (var date in Enumerable.Range(0, 20000).Select(x => startDate.AddDays(x)))
             {
-                var firstDateOfFiscalYear = date.FirstDateOfFiscalYear();
+                var firstDateOfFinancialYear = date.FirstDateOfFinancialYear();
                 var expected = new DateTime(
-                    date.Month < DateTimeExtensions.FirstMonthOfFiscalYear ? date.Year - 1 : date.Year,
-                    DateTimeExtensions.FirstMonthOfFiscalYear,
+                    date.Month < DateTimeExtensions.FirstMonthOfFinancialYear ? date.Year - 1 : date.Year,
+                    DateTimeExtensions.FirstMonthOfFinancialYear,
                     1);
-                Assert.Equal(expected, firstDateOfFiscalYear);
+                Assert.Equal(expected, firstDateOfFinancialYear);
             }
         }
 
@@ -47,18 +47,18 @@ namespace Scheletro.FinancialYearCalculator.Tests
         /// 日付の会計年度の最終日が取得できることをテストします。
         /// </summary>
         [Fact]
-        public void LastDateOfFiscalYear_ShouldReturnLastDateOfFiscalYear()
+        public void LastDateOfFinancialYear_ShouldReturnLastDateOfFinancialYear()
         {
             var startDate = DateTime.Today.AddDays(-10000);
             foreach (var date in Enumerable.Range(0, 20000).Select(x => startDate.AddDays(x)))
             {
-                var lastDateOfFiscalYear = date.LastDateOfFiscalYear();
+                var lastDateOfFinancialYear = date.LastDateOfFinancialYear();
                 var expected = new DateTime(
-                        (date.Month < DateTimeExtensions.FirstMonthOfFiscalYear ? date.Year - 1 : date.Year) + 1,
-                        DateTimeExtensions.FirstMonthOfFiscalYear,
+                        (date.Month < DateTimeExtensions.FirstMonthOfFinancialYear ? date.Year - 1 : date.Year) + 1,
+                        DateTimeExtensions.FirstMonthOfFinancialYear,
                         1)
                     .AddSeconds(-1);
-                Assert.Equal(expected, lastDateOfFiscalYear);
+                Assert.Equal(expected, lastDateOfFinancialYear);
             }
         }
 
@@ -71,7 +71,7 @@ namespace Scheletro.FinancialYearCalculator.Tests
             var startDate = DateTime.Today.AddDays(-10000);
             foreach (var date in Enumerable.Range(0, 20000).Select(x => startDate.AddDays(x)))
             {
-                var month = DateTimeExtensions.FirstMonthOfFiscalYear;
+                var month = DateTimeExtensions.FirstMonthOfFinancialYear;
                 var quarterNumber = date.QuarterNumber();
                 if (
                     date.Month == month ||
@@ -118,16 +118,16 @@ namespace Scheletro.FinancialYearCalculator.Tests
             foreach (var date in Enumerable.Range(0, 20000).Select(x => startDate.AddDays(x)))
             {
                 var firstDateOfQuarter = date.FirstDateOfQuarter();
-                var firstMonthOfFiscalYear = DateTimeExtensions.FirstMonthOfFiscalYear;
-                var month = DateTimeExtensions.FirstMonthOfFiscalYear;
+                var firstMonthOfFinancialYear = DateTimeExtensions.FirstMonthOfFinancialYear;
+                var month = DateTimeExtensions.FirstMonthOfFinancialYear;
                 if (
                     date.Month == month ||
                     date.Month == (++month > 12 ? month -= 12 : month) ||
                     date.Month == (++month > 12 ? month -= 12 : month)
                 )
                 {
-                    var expectedYear = date.Month < firstMonthOfFiscalYear ? date.Year - 1 : date.Year;
-                    Assert.Equal(new DateTime(expectedYear, firstMonthOfFiscalYear, 1), firstDateOfQuarter);
+                    var expectedYear = date.Month < firstMonthOfFinancialYear ? date.Year - 1 : date.Year;
+                    Assert.Equal(new DateTime(expectedYear, firstMonthOfFinancialYear, 1), firstDateOfQuarter);
                 }
                 else if (
                     date.Month == (++month > 12 ? month -= 12 : month) ||
@@ -135,9 +135,9 @@ namespace Scheletro.FinancialYearCalculator.Tests
                     date.Month == (++month > 12 ? month -= 12 : month)
                 )
                 {
-                    var expectedMonth = (firstMonthOfFiscalYear += 3) > 12
-                        ? firstMonthOfFiscalYear - 12
-                        : firstMonthOfFiscalYear;
+                    var expectedMonth = (firstMonthOfFinancialYear += 3) > 12
+                        ? firstMonthOfFinancialYear - 12
+                        : firstMonthOfFinancialYear;
                     var expectedYear = date.Month < expectedMonth ? date.Year - 1 : date.Year;
                     Assert.Equal(new DateTime(expectedYear, expectedMonth, 1), firstDateOfQuarter);
                 }
@@ -147,9 +147,9 @@ namespace Scheletro.FinancialYearCalculator.Tests
                     date.Month == (++month > 12 ? month -= 12 : month)
                 )
                 {
-                    var expectedMonth = (firstMonthOfFiscalYear += 6) > 12
-                        ? firstMonthOfFiscalYear - 12
-                        : firstMonthOfFiscalYear;
+                    var expectedMonth = (firstMonthOfFinancialYear += 6) > 12
+                        ? firstMonthOfFinancialYear - 12
+                        : firstMonthOfFinancialYear;
                     var expectedYear = date.Month < expectedMonth ? date.Year - 1 : date.Year;
                     Assert.Equal(new DateTime(expectedYear, expectedMonth, 1), firstDateOfQuarter);
                 }
@@ -159,9 +159,9 @@ namespace Scheletro.FinancialYearCalculator.Tests
                     date.Month == (++month > 12 ? month - 12 : month)
                 )
                 {
-                    var expectedMonth = (firstMonthOfFiscalYear += 9) > 12
-                        ? firstMonthOfFiscalYear - 12
-                        : firstMonthOfFiscalYear;
+                    var expectedMonth = (firstMonthOfFinancialYear += 9) > 12
+                        ? firstMonthOfFinancialYear - 12
+                        : firstMonthOfFinancialYear;
                     var expectedYear = date.Month < expectedMonth ? date.Year - 1 : date.Year;
                     Assert.Equal(new DateTime(expectedYear, expectedMonth, 1), firstDateOfQuarter);
                 }
@@ -178,17 +178,17 @@ namespace Scheletro.FinancialYearCalculator.Tests
             foreach (var date in Enumerable.Range(0, 20000).Select(x => startDate.AddDays(x)))
             {
                 var lastDateOfQuarter = date.LastDateOfQuarter();
-                var firstMonthOfFiscalYear = DateTimeExtensions.FirstMonthOfFiscalYear;
-                var month = DateTimeExtensions.FirstMonthOfFiscalYear;
+                var firstMonthOfFinancialYear = DateTimeExtensions.FirstMonthOfFinancialYear;
+                var month = DateTimeExtensions.FirstMonthOfFinancialYear;
                 if (
                     date.Month == month ||
                     date.Month == (++month > 12 ? month -= 12 : month) ||
                     date.Month == (++month > 12 ? month -= 12 : month)
                 )
                 {
-                    var expectedMonth = (firstMonthOfFiscalYear += 3) > 12
-                        ? firstMonthOfFiscalYear - 12
-                        : firstMonthOfFiscalYear;
+                    var expectedMonth = (firstMonthOfFinancialYear += 3) > 12
+                        ? firstMonthOfFinancialYear - 12
+                        : firstMonthOfFinancialYear;
                     var expectedYear = expectedMonth < date.Month ? date.Year + 1 : date.Year;
                     Assert.Equal(new DateTime(expectedYear, expectedMonth, 1).AddDays(-1), lastDateOfQuarter);
                 }
@@ -198,9 +198,9 @@ namespace Scheletro.FinancialYearCalculator.Tests
                     date.Month == (++month > 12 ? month -= 12 : month)
                 )
                 {
-                    var expectedMonth = (firstMonthOfFiscalYear += 6) > 12
-                        ? firstMonthOfFiscalYear - 12
-                        : firstMonthOfFiscalYear;
+                    var expectedMonth = (firstMonthOfFinancialYear += 6) > 12
+                        ? firstMonthOfFinancialYear - 12
+                        : firstMonthOfFinancialYear;
                     var expectedYear = expectedMonth < date.Month ? date.Year + 1 : date.Year;
                     Assert.Equal(new DateTime(expectedYear, expectedMonth, 1).AddDays(-1), lastDateOfQuarter);
                 }
@@ -210,9 +210,9 @@ namespace Scheletro.FinancialYearCalculator.Tests
                     date.Month == (++month > 12 ? month -= 12 : month)
                 )
                 {
-                    var expectedMonth = (firstMonthOfFiscalYear += 9) > 12
-                        ? firstMonthOfFiscalYear - 12
-                        : firstMonthOfFiscalYear;
+                    var expectedMonth = (firstMonthOfFinancialYear += 9) > 12
+                        ? firstMonthOfFinancialYear - 12
+                        : firstMonthOfFinancialYear;
                     var expectedYear = expectedMonth < date.Month ? date.Year + 1 : date.Year;
                     Assert.Equal(new DateTime(expectedYear, expectedMonth, 1).AddDays(-1), lastDateOfQuarter);
                 }
@@ -222,9 +222,9 @@ namespace Scheletro.FinancialYearCalculator.Tests
                     date.Month == (++month > 12 ? month - 12 : month)
                 )
                 {
-                    var expectedMonth = (firstMonthOfFiscalYear += 12) > 12
-                        ? firstMonthOfFiscalYear - 12
-                        : firstMonthOfFiscalYear;
+                    var expectedMonth = (firstMonthOfFinancialYear += 12) > 12
+                        ? firstMonthOfFinancialYear - 12
+                        : firstMonthOfFinancialYear;
                     var expectedYear = expectedMonth < date.Month ? date.Year + 1 : date.Year;
                     Assert.Equal(new DateTime(expectedYear, expectedMonth, 1).AddDays(-1), lastDateOfQuarter);
                 }
