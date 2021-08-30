@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Scheletro.Utils
+namespace Scheletro.ArgumentValidator
 {
     /// <summary>
     /// メソッドの引数の検証を行う汎用的なメソッドを提供するクラスです。

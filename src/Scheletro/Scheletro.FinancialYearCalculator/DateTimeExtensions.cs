@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Globalization;
 
-namespace Scheletro.Utils
+namespace Scheletro.FinancialYearCalculator
 {
     /// <summary>
     /// <see cref="DateTime"/> クラスの拡張メソッドを提供します。

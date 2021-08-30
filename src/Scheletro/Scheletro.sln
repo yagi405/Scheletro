@@ -3,9 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31613.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scheletro", "Scheletro\Scheletro.csproj", "{EF9AE270-6A0E-4061-836A-A341C929C0FA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scheletro.ArgumentValidator", "Scheletro.ArgumentValidator\Scheletro.ArgumentValidator.csproj", "{13EBE719-0884-49D6-96E0-A12A82C373D0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scheletro.Tests", "Scheletro.Tests\Scheletro.Tests.csproj", "{D8717673-8A16-483C-BFE7-2057BF14E923}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scheletro.ArgumentValidator.Tests", "Scheletro.ArgumentValidator.Tests\Scheletro.ArgumentValidator.Tests.csproj", "{4134CF25-FF0B-4D3D-8DC9-FE9D700997DC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scheletro.FinancialYearCalculator", "Scheletro.FinancialYearCalculator\Scheletro.FinancialYearCalculator.csproj", "{E7CD4AA7-C21D-42F0-B53E-EF18DBD53677}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scheletro.FinancialYearCalculator.Tests", "Scheletro.FinancialYearCalculator.Tests\Scheletro.FinancialYearCalculator.Tests.csproj", "{2045E21F-1938-4CA4-92CF-033372EE1C24}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,14 +17,22 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{EF9AE270-6A0E-4061-836A-A341C929C0FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EF9AE270-6A0E-4061-836A-A341C929C0FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EF9AE270-6A0E-4061-836A-A341C929C0FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EF9AE270-6A0E-4061-836A-A341C929C0FA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D8717673-8A16-483C-BFE7-2057BF14E923}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D8717673-8A16-483C-BFE7-2057BF14E923}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D8717673-8A16-483C-BFE7-2057BF14E923}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D8717673-8A16-483C-BFE7-2057BF14E923}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13EBE719-0884-49D6-96E0-A12A82C373D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13EBE719-0884-49D6-96E0-A12A82C373D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13EBE719-0884-49D6-96E0-A12A82C373D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13EBE719-0884-49D6-96E0-A12A82C373D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4134CF25-FF0B-4D3D-8DC9-FE9D700997DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4134CF25-FF0B-4D3D-8DC9-FE9D700997DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4134CF25-FF0B-4D3D-8DC9-FE9D700997DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4134CF25-FF0B-4D3D-8DC9-FE9D700997DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7CD4AA7-C21D-42F0-B53E-EF18DBD53677}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7CD4AA7-C21D-42F0-B53E-EF18DBD53677}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7CD4AA7-C21D-42F0-B53E-EF18DBD53677}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7CD4AA7-C21D-42F0-B53E-EF18DBD53677}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2045E21F-1938-4CA4-92CF-033372EE1C24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2045E21F-1938-4CA4-92CF-033372EE1C24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2045E21F-1938-4CA4-92CF-033372EE1C24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2045E21F-1938-4CA4-92CF-033372EE1C24}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

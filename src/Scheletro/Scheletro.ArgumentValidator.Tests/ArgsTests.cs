@@ -1,9 +1,8 @@
-﻿using Scheletro.Utils;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using Xunit;
 
-namespace Scheletro.Tests.Utils
+namespace Scheletro.ArgumentValidator.Tests
 {
     /// <summary>
     /// <see cref="Args"/> のテストクラスです。

@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Globalization;
 using System.Linq;
-using Scheletro.Utils;
 using Xunit;
 
-namespace Scheletro.Tests.Utils
+namespace Scheletro.FinancialYearCalculator.Tests
 {
     /// <summary>
     /// <see cref="DateTimeExtensions"/> のテストクラスです。
