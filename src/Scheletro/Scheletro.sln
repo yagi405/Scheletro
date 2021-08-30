@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scheletro.FinancialYearCalc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scheletro.FinancialYearCalculator.Tests", "Scheletro.FinancialYearCalculator.Tests\Scheletro.FinancialYearCalculator.Tests.csproj", "{2045E21F-1938-4CA4-92CF-033372EE1C24}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scheletro.NamedFormatter", "Scheletro.NamedFormatter\Scheletro.NamedFormatter.csproj", "{5E98EF80-91AC-4BA9-82DF-8FCD874E3015}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scheletro.NamedFormatter.Tests", "Scheletro.NamedFormatter.Tests\Scheletro.NamedFormatter.Tests.csproj", "{AC00EEB1-176B-40E5-A3E9-695294C22458}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{2045E21F-1938-4CA4-92CF-033372EE1C24}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2045E21F-1938-4CA4-92CF-033372EE1C24}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2045E21F-1938-4CA4-92CF-033372EE1C24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E98EF80-91AC-4BA9-82DF-8FCD874E3015}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E98EF80-91AC-4BA9-82DF-8FCD874E3015}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E98EF80-91AC-4BA9-82DF-8FCD874E3015}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E98EF80-91AC-4BA9-82DF-8FCD874E3015}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC00EEB1-176B-40E5-A3E9-695294C22458}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC00EEB1-176B-40E5-A3E9-695294C22458}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC00EEB1-176B-40E5-A3E9-695294C22458}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC00EEB1-176B-40E5-A3E9-695294C22458}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
