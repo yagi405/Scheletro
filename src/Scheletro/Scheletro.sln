@@ -15,6 +15,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scheletro.NamedFormatter", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scheletro.NamedFormatter.Tests", "Scheletro.NamedFormatter.Tests\Scheletro.NamedFormatter.Tests.csproj", "{AC00EEB1-176B-40E5-A3E9-695294C22458}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scheletro.ExcelHelper", "Scheletro.ExcelHelper\Scheletro.ExcelHelper.csproj", "{13C105E4-928F-4C5D-8E37-29623521E467}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scheletro.ExcelHelper.Tests", "Scheletro.ExcelHelper.Tests\Scheletro.ExcelHelper.Tests.csproj", "{6104FD71-ED9F-4A1B-933C-D5B3A93C11E8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +49,14 @@ Global
 		{AC00EEB1-176B-40E5-A3E9-695294C22458}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AC00EEB1-176B-40E5-A3E9-695294C22458}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AC00EEB1-176B-40E5-A3E9-695294C22458}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13C105E4-928F-4C5D-8E37-29623521E467}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13C105E4-928F-4C5D-8E37-29623521E467}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13C105E4-928F-4C5D-8E37-29623521E467}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13C105E4-928F-4C5D-8E37-29623521E467}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6104FD71-ED9F-4A1B-933C-D5B3A93C11E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6104FD71-ED9F-4A1B-933C-D5B3A93C11E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6104FD71-ED9F-4A1B-933C-D5B3A93C11E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6104FD71-ED9F-4A1B-933C-D5B3A93C11E8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
