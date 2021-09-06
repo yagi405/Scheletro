@@ -33,6 +33,27 @@ namespace Scheletro.ExcelHelper.NETStandard2_0
         }
 
         /// <summary>
+        /// Excel レポートを作成し、byte配列 として取得します。
+        /// </summary>
+        /// <typeparam name="T">Excel レポートのデータとなる型</typeparam>
+        /// <param name="model">Excel レポートのデータ</param>
+        /// <param name="templateFile">Excel レポートのテンプレートファイルパス</param>
+        /// <returns>Excel レポートの Stream</returns>
+        public byte[] CreateReportAsBytesFromTemplate<T>(T model, byte[] templateFile) where T : class
+        {
+            Args.NotNull(model, nameof(model));
+            Args.NotNull(templateFile, nameof(templateFile));
+
+            var template = GenerateTemplate(model, templateFile);
+
+            using (var stream = new MemoryStream())
+            {
+                template.SaveAs(stream);
+                return stream.ToArray();
+            }
+        }
+
+        /// <summary>
         /// Excel レポートを作成します。
         /// </summary>
         /// <typeparam name="T">Excel レポートのデータとなる型</typeparam>
@@ -49,6 +70,23 @@ namespace Scheletro.ExcelHelper.NETStandard2_0
             template.SaveAs(outputFilePath);
         }
 
+        /// <summary>
+        /// Excel レポートを作成します。
+        /// </summary>
+        /// <typeparam name="T">Excel レポートのデータとなる型</typeparam>
+        /// <param name="model">Excel レポートのデータ</param>
+        /// <param name="templateFile">Excel レポートのテンプレートファイル</param>
+        /// <param name="outputFilePath">Excel レポートの出力ファイルパス</param>
+        public void CreateReportFromTemplate<T>(T model, byte[] templateFile, string outputFilePath) where T : class
+        {
+            Args.NotNull(model, nameof(model));
+            Args.NotNull(templateFile, nameof(templateFile));
+
+            var template = GenerateTemplate(model, templateFile);
+
+            template.SaveAs(outputFilePath);
+        }
+
         private XLTemplate GenerateTemplate<T>(T model, string templateFilePath)
         {
             if (!File.Exists(templateFilePath))
@@ -57,6 +95,23 @@ namespace Scheletro.ExcelHelper.NETStandard2_0
             }
 
             var template = OpenTemplateWorkbook(templateFilePath);
+
+            template.AddVariable(model);
+            var result = template.Generate();
+
+            if (result.HasErrors)
+            {
+                throw new ExcelReportCreatorException(
+                    string.Join(Environment.NewLine, result.ParsingErrors.Select(x => $"・{x.Message}"))
+                );
+            }
+
+            return template;
+        }
+
+        private XLTemplate GenerateTemplate<T>(T model, byte[] templateFile)
+        {
+            var template = OpenTemplateWorkbook(templateFile);
 
             template.AddVariable(model);
             var result = template.Generate();

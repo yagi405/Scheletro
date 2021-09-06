@@ -19,9 +19,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Scheletro.ExcelHelper", "Sc
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Scheletro.ExcelHelper.Tests", "Scheletro.ExcelHelper.Tests\Scheletro.ExcelHelper.Tests.csproj", "{6104FD71-ED9F-4A1B-933C-D5B3A93C11E8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scheletro.ExcelHelper.NETStandard2_0", "Scheletro.ExcelHelper.NETStandard2_0\Scheletro.ExcelHelper.NETStandard2_0.csproj", "{A369A3D0-24BC-4EED-A023-D0784ADD4AD6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Scheletro.ExcelHelper.NETStandard2_0", "Scheletro.ExcelHelper.NETStandard2_0\Scheletro.ExcelHelper.NETStandard2_0.csproj", "{A369A3D0-24BC-4EED-A023-D0784ADD4AD6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scheletro.ArgumentValidator.NETStandard2_0", "Scheletro.ArgumentValidator.NETStandard2_0\Scheletro.ArgumentValidator.NETStandard2_0.csproj", "{E516329C-B01B-4FFC-A837-836EC0A25DCB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Scheletro.ArgumentValidator.NETStandard2_0", "Scheletro.ArgumentValidator.NETStandard2_0\Scheletro.ArgumentValidator.NETStandard2_0.csproj", "{E516329C-B01B-4FFC-A837-836EC0A25DCB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Scheletro.ExcelHelper.NETStandard2_0.Tests", "Scheletro.ExcelHelper.NETStandard2_0.Tests\Scheletro.ExcelHelper.NETStandard2_0.Tests.csproj", "{E3BF063F-AAA3-4EB0-90C9-2AD5548B8169}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,6 +71,10 @@ Global
 		{E516329C-B01B-4FFC-A837-836EC0A25DCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E516329C-B01B-4FFC-A837-836EC0A25DCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E516329C-B01B-4FFC-A837-836EC0A25DCB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3BF063F-AAA3-4EB0-90C9-2AD5548B8169}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3BF063F-AAA3-4EB0-90C9-2AD5548B8169}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3BF063F-AAA3-4EB0-90C9-2AD5548B8169}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3BF063F-AAA3-4EB0-90C9-2AD5548B8169}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

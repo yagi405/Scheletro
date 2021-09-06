@@ -57,6 +57,18 @@ namespace Scheletro.ExcelHelper.NETStandard2_0
         }
 
         /// <summary>
+        /// 指定された Excel ファイルをテンプレートとして開き、対応する Workbook を取得します。
+        /// </summary>
+        /// <param name="file">テンプレートとする Excel ファイル</param>
+        /// <returns>テンプレートとする Excel ファイル（のコピー）に対応する Workbook</returns>
+
+        public XLTemplate OpenTemplateWorkbook(byte[] file)
+        {
+            Args.NotNull(file, nameof(file));
+            return _context.OpenTemplateWorkbook(file);
+        }
+
+        /// <summary>
         /// 本クラスで保持する Excel 関連のリソースを開放します。
         /// </summary>
         /// <param name="disposing">ファイナライザーから呼び出されたときは false、IDisposable.Dispose メソッドから呼び出されたときは true</param>

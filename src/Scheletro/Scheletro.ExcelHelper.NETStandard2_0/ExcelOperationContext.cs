@@ -91,6 +91,22 @@ namespace Scheletro.ExcelHelper.NETStandard2_0
         }
 
         /// <summary>
+        /// 指定された Excel ファイルをテンプレートとして開き、対応する Template を取得します。
+        /// </summary>
+        /// <param name="file">テンプレートとする Excel ファイル</param>
+        /// <returns>テンプレートとする Excel ファイル（のコピー）に対応する Workbook</returns>
+        public XLTemplate OpenTemplateWorkbook(byte[] file)
+        {
+            Args.NotNull(file, nameof(file));
+            var tempPath = Path.Combine(Path.GetTempPath(), $"{Guid.NewGuid()}.xlsx");
+            File.WriteAllBytes(tempPath, file);
+            _tempFilePath.Add(tempPath);
+            var template = new XLTemplate(tempPath);
+            Templates.Add(template);
+            return template;
+        }
+
+        /// <summary>
         /// 本クラスで取り扱うアンマネージドリソースを開放します。
         /// </summary>
         private void ReleaseUnmanagedResources()
